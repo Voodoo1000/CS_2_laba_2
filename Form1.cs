@@ -9,7 +9,10 @@ namespace _2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string input = this.txtSequence.Text;
+            int n = int.Parse(this.txtCount.Text);
 
+            MessageBox.Show(Logic.IndexesNum(input, n));
         }
     }
 
