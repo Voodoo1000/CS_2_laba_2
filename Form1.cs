@@ -5,6 +5,9 @@ namespace _2
         public Form1()
         {
             InitializeComponent();
+
+            txtSequence.Text = Properties.Settings.Default.sequenceNum.ToString();
+            txtCount.Text = Properties.Settings.Default.countNum.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -21,6 +24,10 @@ namespace _2
                 MessageBox.Show("Некорректный ввод", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            Properties.Settings.Default.sequenceNum = input;
+            Properties.Settings.Default.countNum = n;
+            Properties.Settings.Default.Save();
 
             MessageBox.Show(Logic.IndexesNum(input, n));
         }
